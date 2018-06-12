@@ -58,13 +58,13 @@ if &background == "dark"
   let s:green           = s:light_green
   let s:red             = s:light_red
   let s:yellow          = s:light_yellow
-  let s:visual          = s:lighter_black
+  let s:visual          = s:subtle_black
   let s:cursor_line     = s:subtle_black
-  let s:status_line     = s:light_gray
+  let s:status_line     = s:medium_gray
   let s:status_line_nc  = s:light_black
   let s:constant        = s:light_green
   let s:comment         = s:lighter_black
-  let s:selection       = s:light_yellow
+  let s:selection       = s:green
   let s:warning         = s:yellow
 else
   let s:bg              = s:white
@@ -79,7 +79,7 @@ else
   let s:yellow          = s:dark_yellow
   let s:visual          = s:light_blue
   let s:cursor_line     = s:lightest_gray
-  let s:status_line     = s:light_black
+  let s:status_line     = s:medium_gray
   let s:status_line_nc  = s:light_gray
   let s:constant        = s:dark_blue
   let s:comment         = s:light_gray
@@ -102,7 +102,7 @@ endfunction
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
 call s:h("Noise",         {"bg": s:bg, "fg": s:norm_subtle})
 call s:h("Cursor",        {"bg": s:green, "fg": s:norm})
-call s:h("Comment",       {"fg": s:comment, "cterm": "bold"})
+call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
 call s:h("Function",      {"fg": s:norm, "cterm": "bold"})
 
 call s:h("Constant",      {"bg": s:bg, "fg": s:constant})
@@ -154,19 +154,19 @@ call s:h("SpecialKey",    {"fg": s:subtle_black})
 call s:h("NonText",       {"fg": s:medium_gray})
 call s:h("Directory",     {"fg": s:dark_green})
 call s:h("ErrorMsg",      {"fg": s:pink})
-call s:h("IncSearch",     {"bg": s:selection, "fg": s:light_black})
-call s:h("Search",        {"bg": s:selection, "fg": s:light_black})
+call s:h("IncSearch",     {"bg": s:selection, "fg": s:black})
+call s:h("Search",        {"bg": s:selection, "fg": s:black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
-call s:h("LineNr",        {"fg": s:bg_subtle})
+call s:h("LineNr",        {"fg": s:light_black})
 call s:h("CursorLineNr",  {"fg": s:green, "bg": s:bg_very_subtle})
 call s:h("Question",      {"fg": s:red})
-call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
+call s:h("VertSplit",     {"bg": s:bg, "fg": s:bg_very_subtle})
 call s:h("Title",         {"fg": s:dark_green})
 call s:h("Visual",        {"bg": s:visual})
 call s:h("VisualNOS",     {"bg": s:bg_subtle})
 call s:h("WarningMsg",    {"fg": s:warning})
-call s:h("WildMenu",      {"fg": s:black, "bg": s:bg_very_subtle})
+call s:h("WildMenu",      {"fg": s:white, "bg": s:bg})
 call s:h("Folded",        {"fg": s:medium_gray})
 call s:h("FoldColumn",    {"fg": s:bg_subtle})
 call s:h("DiffAdd",       {"fg": s:green})
@@ -193,7 +193,7 @@ hi link helpHyperTextJump  String
 
 """ StatusLine
 
-call s:h("StatusLine",        {"cterm": "underline", "bg": s:bg, "fg": s:status_line})
+call s:h("StatusLine",        {"bg": s:bg, "fg": s:status_line})
 call s:h("StatusLineNC",      {"cterm": "underline", "bg": s:bg, "fg": s:status_line_nc})
 
 " Those are not standard but are useful to emphasis different parts of the
@@ -202,18 +202,18 @@ call s:h("StatusLineOk",      {"gui": "underline", "bg": s:bg, "fg": s:green})
 call s:h("StatusLineError",   {"gui": "underline", "bg": s:bg, "fg": s:pink})
 call s:h("StatusLineWarning", {"gui": "underline", "bg": s:bg, "fg": s:warning})
 
-call s:h("Pmenu",         {"fg": s:norm, "bg": s:cursor_line})
-call s:h("PmenuSel",      {"fg": s:norm, "bg": s:bg_subtle, "gui": "bold"})
+call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_very_subtle})
+call s:h("PmenuSel",      {"fg": s:bg, "bg": s:bg_subtle, "gui": "bold"})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
-call s:h("TabLine",       {"fg": s:norm, "bg": s:bg})
+call s:h("TabLine",       {"fg": s:norm_subtle, "bg": s:bg})
 call s:h("TabLineSel",    {"fg": s:norm, "bg": s:bg, "gui": "bold", "cterm": "bold"})
-call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg})
+call s:h("TabLineFill",   {"fg": s:norm_subtle, "bg": s:bg})
 call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"bg": s:cursor_line})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
-call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
+call s:h("MatchParen",    {"bg": s:bg_very_subtle, "fg": s:norm})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
 
 call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
