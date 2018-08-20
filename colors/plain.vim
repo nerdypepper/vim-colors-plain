@@ -64,7 +64,7 @@ if &background == "dark"
   let s:status_line_nc  = s:light_black
   let s:constant        = s:light_green
   let s:comment         = s:lighter_black
-  let s:selection       = s:green
+  let s:selection       = s:light_purple
   let s:warning         = s:yellow
 else
   let s:bg              = s:white
@@ -78,7 +78,7 @@ else
   let s:red             = s:dark_red
   let s:yellow          = s:dark_yellow
   let s:visual          = s:light_blue
-  let s:cursor_line     = s:lightest_gray
+  let s:cursor_line     = s:medium_gray
   let s:status_line     = s:medium_gray
   let s:status_line_nc  = s:light_gray
   let s:constant        = s:dark_blue
@@ -111,13 +111,12 @@ hi! link Number           Constant
 hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
-hi! link Conceal          Constant
 
 "call s:h("Identifier",    {"fg": s:dark_blue})
 hi! link Identifier       Normal
 
 "hi! link Statement        Normal
-call s:h("Statement",     {"bg": s:bg, "fg": s:norm_subtle, "gui": "bold"})
+call s:h("Statement",     {"bg": s:bg, "fg": s:norm, "cterm": "bold"})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -139,19 +138,21 @@ hi! link Structure        Type
 hi! link Typedef          Type
 
 "call s:h("Special",       {"fg": s:pink})
-hi! link Special          Normal
+hi! link Special          StatusLine
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
 hi! link SpecialComment   Special
 hi! link Debug            Special
 
+hi! link Conceal          NonText
+
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg})
 call s:h("Error",         {"fg": s:red, "bg": s:bg, "cterm": "bold"})
 call s:h("Todo",          {"fg": s:actual_white, "bg": s:pink, "gui": "bold", "cterm": "bold"})
 call s:h("SpecialKey",    {"fg": s:subtle_black})
-call s:h("NonText",       {"fg": s:medium_gray})
+call s:h("NonText",       {"fg": s:bg_very_subtle})
 call s:h("Directory",     {"fg": s:dark_green})
 call s:h("ErrorMsg",      {"fg": s:pink})
 call s:h("IncSearch",     {"bg": s:selection, "fg": s:black})
@@ -203,7 +204,7 @@ call s:h("StatusLineError",   {"gui": "underline", "bg": s:bg, "fg": s:pink})
 call s:h("StatusLineWarning", {"gui": "underline", "bg": s:bg, "fg": s:warning})
 
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:bg_very_subtle})
-call s:h("PmenuSel",      {"fg": s:bg, "bg": s:bg_subtle, "gui": "bold"})
+call s:h("PmenuSel",      {"fg": s:green, "bg": s:bg_very_subtle, "gui": "bold"})
 call s:h("PmenuSbar",     {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm_subtle, "bg": s:bg})
