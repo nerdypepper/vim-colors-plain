@@ -40,8 +40,8 @@ let s:blue            = { "gui": "#20BBFC", "cterm": "4"  }
 let s:light_blue      = { "gui": "#B6D6FD", "cterm": "4" }
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "6"  }
-let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
-let s:light_green     = { "gui": "#5FD7A7", "cterm": "2"  }
+let s:dark_green      = { "gui": "#10A778", "cterm": "6"   }
+let s:light_green     = { "gui": "#5FD7A7", "cterm": "6"  }
 let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
 let s:light_purple    = { "gui": "#6855DE", "cterm": "5"  }
 let s:light_yellow    = { "gui": "#F3E430", "cterm": "3"  }
@@ -99,7 +99,7 @@ function! s:h(group, style)
     \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
+call s:h("Normal",        {"bg": s:bg, "fg": s:norm,})
 call s:h("Noise",         {"bg": s:bg, "fg": s:norm_subtle})
 call s:h("Cursor",        {"bg": s:green, "fg": s:norm})
 call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
@@ -150,7 +150,7 @@ hi! link Conceal          NonText
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg})
 call s:h("Error",         {"fg": s:red, "bg": s:bg, "cterm": "bold"})
-call s:h("Todo",          {"fg": s:actual_white, "bg": s:pink, "gui": "bold", "cterm": "bold"})
+call s:h("Todo",          {"fg": s:actual_white, "bg": s:black, "gui": "bold", "cterm": "bold"})
 call s:h("SpecialKey",    {"fg": s:subtle_black})
 call s:h("NonText",       {"fg": s:bg_very_subtle})
 call s:h("Directory",     {"fg": s:dark_green})
@@ -159,7 +159,7 @@ call s:h("IncSearch",     {"bg": s:selection, "fg": s:black})
 call s:h("Search",        {"bg": s:selection, "fg": s:black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
-call s:h("LineNr",        {"fg": s:light_black})
+call s:h("LineNr",        {"fg": s:medium_gray})
 call s:h("CursorLineNr",  {"fg": s:green, "bg": s:bg_very_subtle})
 call s:h("Question",      {"fg": s:red})
 call s:h("VertSplit",     {"bg": s:bg, "fg": s:bg_very_subtle})
@@ -174,7 +174,7 @@ call s:h("DiffAdd",       {"fg": s:green})
 call s:h("DiffDelete",    {"fg": s:red})
 call s:h("DiffChange",    {"fg": s:dark_yellow})
 call s:h("DiffText",      {"fg": s:dark_green})
-call s:h("SignColumn",    {"fg": s:light_green})
+call s:h("SignColumn",    {"fg": s:medium_gray})
 
 if has("gui_running")
   call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
@@ -195,7 +195,7 @@ hi link helpHyperTextJump  String
 """ StatusLine
 
 call s:h("StatusLine",        {"bg": s:bg, "fg": s:status_line})
-call s:h("StatusLineNC",      {"cterm": "underline", "bg": s:bg, "fg": s:status_line_nc})
+call s:h("StatusLineNC",      {"bg": s:bg, "fg": s:status_line_nc})
 
 " Those are not standard but are useful to emphasis different parts of the
 " status line.
@@ -224,6 +224,20 @@ call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 
+call s:h("htmlBold",      {"bg": s:bg, "fg": s:norm})
+call s:h("htmlItalic",    {"bg": s:bg, "fg": s:norm})
+call s:h("htmlEndTag",    {"bg": s:bg, "fg": s:norm})
+call s:h("htmlTag",       {"bg": s:bg, "fg": s:norm})
+call s:h("htmlTagName",   {"bg": s:bg, "fg": s:norm})
+call s:h("htmlArg",       {"bg": s:bg, "fg": s:norm})
+call s:h("htmlError",     {"bg": s:bg, "fg": s:red})
+
+" JavaScript highlighting
+"
+call s:h("javaScript",           {"bg": s:bg, "fg": s:norm})
+call s:h("javaScriptBraces",     {"bg": s:bg, "fg": s:norm})
+call s:h("javaScriptNumber",     {"bg": s:bg, "fg": s:green})
+
 hi link diffRemoved       DiffDelete
 hi link diffAdded         DiffAdd
 
@@ -238,10 +252,27 @@ hi link GitGutterChangeDelete       LineNr
 
 hi link jsFlowTypeKeyword Statement
 hi link jsFlowImportType Statement
-hi link jsFunction Statement
-hi link jsGlobalObjects Normal
+hi link jsFunction Function
+hi link jsGlobalObjects Noise
 hi link jsGlobalNodeObjects Normal
-hi link jsArrowFunction Noise
+hi link jsSwitchCase Constant
+
+call s:h("jsSpreadOperator ",     {"bg": s:bg, "fg": s:selection})
+hi link jsReturn jsSpreadOperator
+hi link jsExport jsSpreadOperator
+
+call s:h("rustModPath ",     {"bg": s:bg, "fg": s:lightest_gray})
+hi link rustMacro jsSpreadOperator
+hi link rustKeyword Noise
+hi link rustDerive jsSpreadOperator
+hi link rustDeriveTrait jsSpreadOperator
+hi link rustAttribute jsSpreadOperator
+hi link rustLifetime jsSpreadOperator
+
+hi link shCommandSub jsSpreadOperator
+
+hi link cFormat jsSpreadOperator
+
 hi link StorageClass Statement
 
 call s:h("xmlTag", {"bg": s:bg, "fg": s:constant})
@@ -261,3 +292,6 @@ hi link markdownCodeBlock Constant
 hi link markdownCodeDelimiter Constant
 hi link markdownHeadingDelimiter Constant
 
+call s:h("cssBraces",     {"bg": s:bg, "fg": s:selection})
+hi link cssTextProp Noise
+hi link cssTagName Normal
