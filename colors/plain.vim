@@ -135,7 +135,7 @@ hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
 "call s:h("Type",          {"fg": s:purple})
-hi! link Type             Normal
+hi! link Type             secondAccent
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
@@ -275,9 +275,6 @@ hi link rustLifetime secondAccent
 hi link schemeSyntax Normal
 hi link schemeParentheses Noise
 hi link schemeIdentifier Noise
-
-hi link haskellType secondAccent
-hi link elmType secondAccent
 
 hi link shCommandSub secondAccent
 
