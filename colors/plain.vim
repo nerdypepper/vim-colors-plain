@@ -289,6 +289,8 @@ hi link nixNamespacedBuiltin secondAccent
 hi link sqlSpecial firstAccent
 hi link sqlKeyword secondAccent
 
+hi link helpExample Normal
+
 hi link StorageClass Statement
 
 call s:h("xmlTag", {"bg": s:bg, "fg": s:constant})
