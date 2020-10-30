@@ -289,7 +289,10 @@ hi link nixNamespacedBuiltin secondAccent
 hi link sqlSpecial firstAccent
 hi link sqlKeyword secondAccent
 
-hi link helpExample Normal
+hi link helpExample Noise
+hi link helpCommand secondAccent
+hi link helpBacktick secondAccent
+hi link helpSpecial Noise
 
 hi link StorageClass Statement
 
