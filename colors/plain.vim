@@ -99,6 +99,9 @@ function! s:h(group, style)
     \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
+call s:h("firstAccent",        {"bg": s:bg, "fg": s:cyan,})
+call s:h("secondAccent",        {"bg": s:bg, "fg": s:purple,})
+
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm,})
 call s:h("Noise",         {"bg": s:bg, "fg": s:norm_subtle})
 call s:h("Cursor",        {"bg": s:green, "fg": s:norm})
@@ -262,16 +265,29 @@ hi link jsReturn jsSpreadOperator
 hi link jsExport jsSpreadOperator
 
 call s:h("rustModPath ",     {"bg": s:bg, "fg": s:lightest_gray})
-hi link rustMacro jsSpreadOperator
+hi link rustMacro secondAccent
 hi link rustKeyword Noise
-hi link rustDerive jsSpreadOperator
-hi link rustDeriveTrait jsSpreadOperator
-hi link rustAttribute jsSpreadOperator
-hi link rustLifetime jsSpreadOperator
+hi link rustDerive secondAccent
+hi link rustDeriveTrait secondAccent
+hi link rustAttribute secondAccent
+hi link rustLifetime secondAccent
 
-hi link shCommandSub jsSpreadOperator
+hi link schemeSyntax Normal
+hi link schemeParentheses Noise
+hi link schemeIdentifier Noise
 
-hi link cFormat jsSpreadOperator
+hi link haskellType secondAccent
+hi link elmType secondAccent
+
+hi link shCommandSub secondAccent
+
+hi link cFormat secondAccent
+
+hi link nixBuiltin secondAccent
+hi link nixNamespacedBuiltin secondAccent
+
+hi link sqlSpecial firstAccent
+hi link sqlKeyword secondAccent
 
 hi link StorageClass Statement
 
