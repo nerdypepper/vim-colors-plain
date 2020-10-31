@@ -60,8 +60,8 @@ if &background == "dark"
   let s:yellow          = s:light_yellow
   let s:visual          = s:subtle_black
   let s:cursor_line     = s:subtle_black
-  let s:status_line     = s:medium_gray
-  let s:status_line_nc  = s:light_black
+  let s:status_line     = s:lighter_gray
+  let s:status_line_nc  = s:lighter_gray
   let s:constant        = s:light_green
   let s:comment         = s:lighter_black
   let s:selection       = s:light_purple
@@ -79,8 +79,8 @@ else
   let s:yellow          = s:dark_yellow
   let s:visual          = s:light_blue
   let s:cursor_line     = s:medium_gray
-  let s:status_line     = s:medium_gray
-  let s:status_line_nc  = s:light_gray
+  let s:status_line     = s:lighter_gray
+  let s:status_line_nc  = s:lighter_gray
   let s:constant        = s:dark_blue
   let s:comment         = s:light_gray
   let s:selection       = s:light_yellow
@@ -108,7 +108,7 @@ call s:h("Cursor",        {"bg": s:green, "fg": s:norm})
 call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
 call s:h("Function",      {"fg": s:norm, "cterm": "bold"})
 
-call s:h("Constant",      {"bg": s:bg, "fg": s:constant})
+hi! link Constant         firstAccent
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
@@ -131,7 +131,7 @@ hi! link Exception        Statement
 hi! link PreProc          Normal
 hi! link Include          Statement
 hi! link Define           PreProc
-hi! link Macro            PreProc
+hi! link Macro            secondAccent
 hi! link PreCondit        PreProc
 
 "call s:h("Type",          {"fg": s:purple})
@@ -293,7 +293,7 @@ hi link helpSpecial Noise
 
 hi link StorageClass Statement
 
-call s:h("xmlTag", {"bg": s:bg, "fg": s:constant})
+hi link xmlTag Constant
 hi link xmlTagName xmlTag
 hi link xmlEndTag xmlTag
 hi link xmlAttrib xmlTag
