@@ -60,8 +60,8 @@ if &background == "dark"
   let s:yellow          = s:light_yellow
   let s:visual          = s:subtle_black
   let s:cursor_line     = s:subtle_black
-  let s:status_line     = s:lighter_gray
-  let s:status_line_nc  = s:lighter_gray
+  let s:status_line     = s:lighter_black
+  let s:status_line_nc  = s:subtle_black
   let s:constant        = s:light_green
   let s:comment         = s:lighter_black
   let s:selection       = s:light_purple
@@ -80,7 +80,7 @@ else
   let s:visual          = s:light_blue
   let s:cursor_line     = s:medium_gray
   let s:status_line     = s:lighter_gray
-  let s:status_line_nc  = s:lighter_gray
+  let s:status_line_nc  = s:lighter_black
   let s:constant        = s:dark_blue
   let s:comment         = s:light_gray
   let s:selection       = s:light_yellow
@@ -99,8 +99,8 @@ function! s:h(group, style)
     \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-call s:h("firstAccent",        {"bg": s:bg, "fg": s:cyan,})
-call s:h("secondAccent",        {"bg": s:bg, "fg": s:purple,})
+call s:h("firstAccent",        {"bg": s:bg, "fg": s:cyan})
+call s:h("secondAccent",        {"bg": s:bg, "fg": s:purple})
 
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm,})
 call s:h("Noise",         {"bg": s:bg, "fg": s:norm_subtle})
@@ -131,14 +131,14 @@ hi! link Exception        Statement
 hi! link PreProc          Normal
 hi! link Include          Statement
 hi! link Define           PreProc
-hi! link Macro            secondAccent
+hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
 "call s:h("Type",          {"fg": s:purple})
 hi! link Type             secondAccent
 hi! link StorageClass     Type
-hi! link Structure        Type
-hi! link Typedef          Type
+hi! link Structure        Noise
+hi! link Typedef          Noise
 
 "call s:h("Special",       {"fg": s:pink})
 hi! link Special          StatusLine
