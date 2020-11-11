@@ -293,6 +293,8 @@ hi link helpSpecial Noise
 
 hi link StorageClass Statement
 
+hi link elmType Type
+
 hi link xmlTag Constant
 hi link xmlTagName xmlTag
 hi link xmlEndTag xmlTag
