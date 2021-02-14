@@ -99,11 +99,11 @@ function! s:h(group, style)
     \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-call s:h("firstAccent",        {"bg": s:bg, "fg": s:cyan})
-call s:h("secondAccent",        {"bg": s:bg, "fg": s:purple})
+call s:h("firstAccent",        {"fg": s:cyan})
+call s:h("secondAccent",        {"fg": s:purple})
 
-call s:h("Normal",        {"bg": s:bg, "fg": s:norm,})
-call s:h("Noise",         {"bg": s:bg, "fg": s:norm_subtle})
+call s:h("Normal",        {"fg": s:norm,})
+call s:h("Noise",         {"fg": s:norm_subtle})
 call s:h("Cursor",        {"bg": s:green, "fg": s:norm})
 call s:h("Comment",       {"fg": s:comment, "cterm": "italic"})
 call s:h("Function",      {"fg": s:norm, "cterm": "bold"})
@@ -119,7 +119,7 @@ hi! link String           Constant
 hi! link Identifier       Normal
 
 "hi! link Statement        Normal
-call s:h("Statement",     {"bg": s:bg, "fg": s:norm, "cterm": "bold"})
+call s:h("Statement",     {"fg": s:norm, "cterm": "bold"})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -152,7 +152,7 @@ hi! link Conceal          NonText
 
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg})
-call s:h("Error",         {"fg": s:red, "bg": s:bg, "cterm": "bold"})
+call s:h("Error",         {"fg": s:red, "cterm": "bold"})
 call s:h("Todo",          {"fg": s:actual_white, "bg": s:black, "gui": "bold", "cterm": "bold"})
 call s:h("SpecialKey",    {"fg": s:subtle_black})
 call s:h("NonText",       {"fg": s:bg_very_subtle})
@@ -197,8 +197,8 @@ hi link helpHyperTextJump  String
 
 """ StatusLine
 
-call s:h("StatusLine",        {"bg": s:bg, "fg": s:status_line})
-call s:h("StatusLineNC",      {"bg": s:bg, "fg": s:status_line_nc})
+call s:h("StatusLine",        {"fg": s:status_line})
+call s:h("StatusLineNC",      {"fg": s:status_line_nc})
 
 " Those are not standard but are useful to emphasis different parts of the
 " status line.
@@ -220,20 +220,20 @@ call s:h("ColorColumn",   {"bg": s:bg_subtle})
 call s:h("MatchParen",    {"bg": s:bg_very_subtle, "fg": s:norm})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
 
-call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH2",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH3",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
-call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
+call s:h("htmlH1",        {"fg": s:norm})
+call s:h("htmlH2",        {"fg": s:norm})
+call s:h("htmlH3",        {"fg": s:norm})
+call s:h("htmlH4",        {"fg": s:norm})
+call s:h("htmlH5",        {"fg": s:norm})
+call s:h("htmlH6",        {"fg": s:norm})
 
-call s:h("htmlBold",      {"bg": s:bg, "fg": s:norm})
-call s:h("htmlItalic",    {"bg": s:bg, "fg": s:norm})
-call s:h("htmlEndTag",    {"bg": s:bg, "fg": s:norm})
-call s:h("htmlTag",       {"bg": s:bg, "fg": s:norm})
-call s:h("htmlTagName",   {"bg": s:bg, "fg": s:norm})
-call s:h("htmlArg",       {"bg": s:bg, "fg": s:norm})
-call s:h("htmlError",     {"bg": s:bg, "fg": s:red})
+call s:h("htmlBold",      {"fg": s:norm})
+call s:h("htmlItalic",    {"fg": s:norm})
+call s:h("htmlEndTag",    {"fg": s:norm})
+call s:h("htmlTag",       {"fg": s:norm})
+call s:h("htmlTagName",   {"fg": s:norm})
+call s:h("htmlArg",       {"fg": s:norm})
+call s:h("htmlError",     {"fg": s:red})
 
 " JavaScript highlighting
 "
@@ -264,7 +264,7 @@ call s:h("jsSpreadOperator ",     {"bg": s:bg, "fg": s:selection})
 hi link jsReturn jsSpreadOperator
 hi link jsExport jsSpreadOperator
 
-call s:h("rustModPath ",     {"bg": s:bg, "fg": s:lightest_gray})
+call s:h("rustModPath ",     {"fg": s:lightest_gray})
 hi link rustMacro secondAccent
 hi link rustKeyword Noise
 hi link rustDerive secondAccent
