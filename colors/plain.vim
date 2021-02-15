@@ -244,6 +244,12 @@ call s:h("javaScriptNumber",     {"bg": s:bg, "fg": s:green})
 hi link diffRemoved       DiffDelete
 hi link diffAdded         DiffAdd
 
+" nvim-lsp diagnostics
+hi link LspDiagnosticsDefaultError Error
+hi link LspDiagnosticsDefaultWarning WarningMsg
+hi link LspDiagnosticsDefaultInformation Noise
+hi link LspDiagnosticsDefaultHint Constant
+
 " Signify, git-gutter
 hi link SignifySignAdd              LineNr
 hi link SignifySignDelete           LineNr
