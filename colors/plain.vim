@@ -333,6 +333,9 @@ hi link schemeSyntax Normal
 hi link schemeParentheses Noise
 hi link schemeIdentifier Noise
 
+hi link lispParen Noise
+hi link lispSymbol Noise
+
 hi link shCommandSub secondAccent
 
 hi link cFormat secondAccent
