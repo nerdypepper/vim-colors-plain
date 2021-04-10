@@ -218,7 +218,8 @@ call s:h("CursorLine",    {"bg": s:cursor_line})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
 call s:h("MatchParen",    {"bg": s:bg_very_subtle, "fg": s:norm})
-call s:h("qfLineNr",      {"fg": s:medium_gray})
+hi link qfLineNr secondAccent
+hi link qfFileName firstAccent
 
 call s:h("htmlH1",        {"fg": s:norm})
 call s:h("htmlH2",        {"fg": s:norm})
