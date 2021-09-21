@@ -11,3 +11,7 @@ the following directories:
 
  - vim: `.vim/plugin`
  - neovim: `.config/nvim/plugin`
+
+if you use nix/nixos, this repository provides a vim plugin
+as a flake output, that you can import via
+`builtins.getFlake`.
