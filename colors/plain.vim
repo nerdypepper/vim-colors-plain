@@ -282,6 +282,7 @@ hi link TSRepeat Normal
 hi link TSString Constant
 hi link TSStringRegex secondAccent
 hi link TSStringEscape secondAccent
+hi link TSStringSpecial secondAccent
 hi link TSTag Statement
 hi link TSTagDelimiter Noise
 hi link TSText Normal
