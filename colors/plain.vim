@@ -345,6 +345,13 @@ hi link cFormat secondAccent
 hi link nixBuiltin secondAccent
 hi link nixNamespacedBuiltin secondAccent
 
+hi link awkPatterns secondAccent
+hi link awkVariables Normal
+hi link awkOperator Normal
+hi link awkExpression Noise
+hi link awkArrayElement Noise
+hi link awkFieldVars firstAccent
+
 hi link sqlSpecial firstAccent
 hi link sqlKeyword secondAccent
 
