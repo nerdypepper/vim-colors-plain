@@ -351,6 +351,8 @@ hi link awkOperator Normal
 hi link awkExpression Noise
 hi link awkArrayElement Noise
 hi link awkFieldVars firstAccent
+hi link awkSpecialPrintf secondAccent
+hi link awkSpecialCharacter Noise
 
 hi link sqlSpecial firstAccent
 hi link sqlKeyword secondAccent
