@@ -386,3 +386,10 @@ hi link markdownHeadingDelimiter Constant
 call s:h("cssBraces",     {"bg": s:bg, "fg": s:selection})
 hi link cssTextProp Noise
 hi link cssTagName Normal
+
+
+" leap-nvim support
+hi link LeapMatch Normal
+hi link LeapLabelPrimary Normal
+hi link LeapLabelSecondary Normal
+hi link LeapBackdrop Noise
