@@ -160,6 +160,7 @@ call s:h("Directory",     {"fg": s:dark_green})
 call s:h("ErrorMsg",      {"fg": s:pink})
 call s:h("IncSearch",     {"bg": s:selection, "fg": s:black})
 call s:h("Search",        {"bg": s:selection, "fg": s:black})
+call s:h("CurSearch",     {"bg": s:selection, "fg": s:black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:medium_gray})
