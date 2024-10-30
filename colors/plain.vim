@@ -394,3 +394,6 @@ hi link LeapMatch Normal
 hi link LeapLabelPrimary Normal
 hi link LeapLabelSecondary Normal
 hi link LeapBackdrop Noise
+
+" lsp ui
+hi link FloatBorder Noise
